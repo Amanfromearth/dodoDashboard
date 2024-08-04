@@ -11,7 +11,7 @@ const ActivityFeed = () => {
     {
       id: 2,
       avatar: "bg-yellow-400",
-      text: "Aman added a new product",
+      text: "Ayush added a new product",
       time: "59 minutes ago",
     },
     {

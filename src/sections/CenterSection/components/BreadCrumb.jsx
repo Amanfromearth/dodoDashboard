@@ -10,9 +10,9 @@ export default function Breadcrumb() {
   
   return (
     <div className="text-sm hidden lg:block space-x-2">
-      <span className="text-slate-400">{mainPageText}</span>
-      <span className="text-slate-200 mx-1">/</span>
-      <span className="text-slate-600">{selectedPage}</span>
+      <span className="text-slate-600 dark:text-slate-400">{mainPageText}</span>
+      <span className="text-slate-500 dark:text-slate-300 mx-1">/</span>
+      <span className="text-slate-800 dark:text-slate-200">{selectedPage}</span>
     </div>
   );
 }

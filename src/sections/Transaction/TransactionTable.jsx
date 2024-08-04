@@ -12,7 +12,7 @@ const TransactionTable = () => {
   const [filteredTransactions, setFilteredTransactions] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: "ascending" });
   const [statusFilter, setStatusFilter] = useState("All");
-  const itemsPerPage = 9;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     const filtered = filterAndSortTransactions(transactions, searchTerm, statusFilter, sortConfig);

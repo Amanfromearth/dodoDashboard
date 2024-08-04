@@ -19,7 +19,6 @@ export default function RootLayout({ children }) {
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem
           disableTransitionOnChange
         >
           <main className="w-full h-screen bg-background dark:bg-[#2a2a2a] p-3 flex flex-row items-center justify-center">

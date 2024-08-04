@@ -15,7 +15,7 @@ const TableBody = ({ currentItems }) => (
               size={23}
               variant="beam"
             />
-            <span className="text-xs">{transaction.user}</span>
+            <span className="text-xs lg:text-sm">{transaction.user}</span>
           </div>
         </td>
         <td className="p-2 hidden sm:table-cell">{transaction.project}</td>
