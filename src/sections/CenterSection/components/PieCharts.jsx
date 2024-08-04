@@ -8,36 +8,37 @@ import {
 } from "@/components/ui/chart";
 import { useTheme } from "next-themes";
 
-const lightModeColors = ["#c5fa58", "#526062", "#ef8e5b", "#0b6468"];
-const darkModeColors = ["#8ecae6", "#219ebc", "#023047", "#ffb703"];
+
+const lightModeColors = ["#ff9a9e", "#f5e78e", "#9ad0f5", "#b0f2d1"];
+const darkModeColors = ["#9ec1cf", "#f09a9d", "#5d9fc5", "#7be2c7"];
 
 const chartData = [
-  { browser: "chrome", visitors: 275 },
-  { browser: "safari", visitors: 200 },
-  { browser: "firefox", visitors: 287 },
-  { browser: "edge", visitors: 173 },
+  { category: "Sales", transactions: 600 },
+  { category: "Refunds", transactions: 150 },
+  { category: "Chargebacks", transactions: 90 },
+  { category: "Fees", transactions: 100 },
 ];
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  transactions: {
+    label: "Transactions",
   },
-  chrome: {
-    label: "Chrome",
+  sales: {
+    label: "Sales",
   },
-  safari: {
-    label: "Safari",
+  refunds: {
+    label: "Refunds",
   },
-  firefox: {
-    label: "Firefox",
+  chargebacks: {
+    label: "Chargebacks",
   },
-  edge: {
-    label: "Edge",
+  fees: {
+    label: "Fees",
   },
 };
 
 const CustomLegend = ({ data, colors }) => (
-  <div className="flex w-full h-full  justify-evenly flex-col  text-xs">
+  <div className="flex w-full h-full justify-evenly flex-col text-xs">
     {data.map((entry, index) => (
       <div
         key={`item-${index}`}
@@ -48,9 +49,9 @@ const CustomLegend = ({ data, colors }) => (
             className="w-2 h-2 rounded-full flex mr-1"
             style={{ backgroundColor: colors[index % colors.length] }}
           />
-          <span>{`${entry.browser}`}</span>
+          <span>{`${entry.category}`}</span>
         </div>
-        <span>{`${entry.visitors}%`}</span>
+        <span>{`${entry.transactions}`}</span>
       </div>
     ))}
   </div>
@@ -67,7 +68,7 @@ export default function PieChartComp() {
 
   return (
     <div className="w-full p-4 dark:bg-[#353535] rounded-xl">
-      <span className="text-base font-semibold">Pie Chart</span>
+      <span className="text-base font-semibold">Transaction Distribution</span>
       <div className="flex-1">
         <div className="flex flex-row justify-between items-center h-[25vh]">
           <ChartContainer
@@ -81,8 +82,8 @@ export default function PieChartComp() {
               />
               <Pie
                 data={dataWithColors}
-                dataKey="visitors"
-                nameKey="browser"
+                dataKey="transactions"
+                nameKey="category"
                 innerRadius={50}
                 outerRadius="90%"
                 strokeWidth={2}

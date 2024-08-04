@@ -39,7 +39,7 @@ const Block = () => {
       change: "+11.01%",
       isPositive: true,
       bgColor: "bg-[#f9fef0]",
-      darkbgColor: "bg-[#f9fef0]",
+      darkbgColor: "dark:bg-[#f9fef0]",
     },
     {
       title: "Customers",
@@ -47,7 +47,7 @@ const Block = () => {
       change: "+5.27%",
       isPositive: true,
       bgColor: "bg-[#dbe6f2]",
-      darkbgColor: "bg-[#e5ecf6]",
+      darkbgColor: "dark:bg-[#e5ecf6]",
     },
     {
       title: "Orders",
@@ -55,7 +55,7 @@ const Block = () => {
       change: "-2.35%",
       isPositive: false,
       bgColor: "bg-[#fef0f9]",
-      darkbgColor: "bg-[#f9fef0]",
+      darkbgColor: "dark:bg-[#f9fef0]",
     },
     {
       title: "Conversion",
@@ -63,7 +63,7 @@ const Block = () => {
       change: "+0.82%",
       isPositive: true,
       bgColor: "bg-[#dbe6f2]",
-      darkbgColor: "bg-[#e5ecf6]",
+      darkbgColor: "dark:bg-[#e5ecf6]",
     },
   ];
 
