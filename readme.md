@@ -1,20 +1,24 @@
+Here's a revised version of your text with improved grammar and clarity:
+
+---
+
 # Dodo Payments Merchant Dashboard
 
 ## Overview
 
-This project is a frontend implementation of the Dodo Payments Merchant Dashboard, created as part of the hiring process for a Senior Frontend Engineer position. The dashboard includes responsive charts, form submission to update users, form validation, and a transaction table with filtering, sorting, and search functionality.
+This project is a frontend implementation of the Dodo Payments Merchant Dashboard, developed as part of the hiring process for a Senior Frontend Engineer position. The dashboard features responsive charts, form submission for user updates, form validation, and a transaction table with filtering, sorting, and search capabilities.
 
 ## Live Demo
 
-[Live demo link here](https://dodo-dash.vercel.app/)
+[View the live demo here](https://dodo-dash.vercel.app/)
 
 ## Features
 
-- Dashboard overview with key metrics display
+- Dashboard overview displaying key metrics
 - Recent transactions table with pagination
 - Compliance alerts and notifications section
 - Toast notifications
-- Responsive design for desktop and mobile devices
+- Responsive design for both desktop and mobile devices
 - Transaction filtering, sorting, and searching
 - User settings form with validation
 - Form submission for user updates
@@ -60,18 +64,12 @@ This project is a frontend implementation of the Dodo Payments Merchant Dashboar
 
 ## Design Decisions and Trade-offs
 
-[Discuss any significant design decisions you made and why. Mention any trade-offs you encountered and how you resolved them.]
-
-## Performance Optimizations
-
-[If you implemented any performance optimizations, describe them here.]
-
-## Future Improvements
-
-[List any features or improvements you would add given more time.]
+No trade-offs were made for the dashboard/overview page based on the provided Figma design. The transaction table and profile form page were designed independently to match the UI aesthetics. Dark mode has also been implemented.
 
 ## Contact
 
 Anurag - [anurag3b@gmail.com](mailto:anurag3b@gmail.com)
+
+Personal Website - [anurag.be](https://anurag.be)
 
 Project Link: [GitHub Repository](https://github.com/Amanfromearth/dodoDashboard)
