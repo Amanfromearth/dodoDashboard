@@ -24,7 +24,7 @@ const labelClasses = "absolute left-3 top-2 text-gray-500 dark:text-slate-400 te
 
 const InputField = ({ register, name, placeholder, error, defaultValue = '' }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState();
 
   return (
     <div className="relative">
@@ -37,7 +37,7 @@ const InputField = ({ register, name, placeholder, error, defaultValue = '' }) =
           setIsFocused(false);
           setValue(e.target.value);
         }}
-        defaultValue={defaultValue}
+        
       />
       <label className={`${labelClasses} ${(isFocused || value) ? 'text-xs top-1' : 'top-4'}`}>
         {placeholder}
@@ -49,19 +49,19 @@ const InputField = ({ register, name, placeholder, error, defaultValue = '' }) =
 
 const SelectField = ({ register, name, options, error, defaultValue = '' }) => {
   const [isFocused, setIsFocused] = useState(false);
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState();
 
   return (
     <div className="relative">
       <select
         {...register(name)}
-        className={`${inputClasses} ${(isFocused || value) ? 'pt-8' : ''}`}
+        className={`${inputClasses} ${(isFocused || value) ? '' : ''}`}
         onFocus={() => setIsFocused(true)}
         onBlur={(e) => {
           setIsFocused(false);
           setValue(e.target.value);
         }}
-        defaultValue={defaultValue}
+        
       >
         <option value="">Select {name}</option>
         {options.map(option => (
@@ -69,9 +69,7 @@ const SelectField = ({ register, name, options, error, defaultValue = '' }) => {
         ))}
       </select>
       <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none text-gray-500" size={20} />
-      <label className={`${labelClasses} ${(isFocused || value) ? 'text-xs top-1' : 'top-4'}`}>
-        {name}
-      </label>
+      
       {error && <p className={errorClasses}>{error.message}</p>}
     </div>
   );
@@ -82,17 +80,7 @@ const Profile = () => {
   const { setName } = useStore();
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: zodResolver(schema),
-    defaultValues: {
-      firstName: 'Anurag',
-      lastName: 'Bevinal',
-      contactPhone: '234567890',
-      title: 'SDE',
-      company: 'Dodo',
-      email: 'dodo@dodo.com',
-      country: 'India',
-      language: 'English',
-      status: true
-    }
+
   });
 
   const onSubmit = useCallback(async (data) => {
