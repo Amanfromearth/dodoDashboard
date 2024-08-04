@@ -1,7 +1,7 @@
 "use client"
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis, Cell } from "recharts"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
-import { useTheme } from "next-themes" // Import useTheme hook
+import { useTheme } from "next-themes" 
 
 const chartData = [
   { month: "January", desktop: 186 },
@@ -18,8 +18,7 @@ const lightModeColors = ["#526062", "#ef8e5b", "#0b6468", "#526062"]
 const darkModeColors = ["#8ecae6", "#219ebc", "#023047", "#ffb703"]
 
 export default function BarChartComp() {
-  const { theme } = useTheme() // Use the useTheme hook to get the current theme
-
+  const { theme } = useTheme() 
   const colors = theme === 'dark' ? darkModeColors : lightModeColors
 
   return (

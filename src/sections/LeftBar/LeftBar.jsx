@@ -1,8 +1,13 @@
+"use client";
+import { useTheme } from "next-themes";
 import Favorites from "./components/Favorites";
 import NameBadge from "./components/NameBadge";
 import PageList from "./components/PageList";
 
 const LeftBar = ({ isVisible }) => {
+  const { theme } = useTheme();
+  const logoSrc = theme === "dark" ? "dododark.svg" : "dodolight.svg";
+
   return (
     <section
       className={`h-full p-3 pr-5 ${
@@ -12,7 +17,7 @@ const LeftBar = ({ isVisible }) => {
       <NameBadge />
       <Favorites />
       <PageList />
-      <img src="/dodo.svg" alt="dodologo" className="w-32" />
+      <img src={logoSrc} alt="dodologo" className="w-32" />
     </section>
   );
 };
