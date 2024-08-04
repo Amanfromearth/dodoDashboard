@@ -34,7 +34,7 @@ const Profile = () => {
   
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="w-full h-full flex p-2 sm:p-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="w-full h-full flex p-2 mt-5 sm:p-6">
       <div className='w-full h-fit bg-[#f7f9fb] dark:bg-[#353535] rounded-2xl flex px-4 sm:px-8 py-4 sm:py-5 gap-4 sm:gap-5 flex-col'>
         <span className="flex text-base font-medium gap-1 tracking-tight items-center">
           Profile Details

@@ -32,7 +32,7 @@ const TransactionTable = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col gap-3 p-4 md:p-8">
+    <div className="w-full h-full flex flex-col gap-3 p-4 mt-5 md:p-8">
       <span className="text-sm font-semibold">Transactions</span>
       <SearchBar 
         searchTerm={searchTerm} 
