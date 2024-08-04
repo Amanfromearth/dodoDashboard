@@ -16,7 +16,8 @@ export async function GET() {
   return NextResponse.json(mockProfileData);
 }
 
-export async function PUT(request) {
+export async function POST(request) {
+  console.log("POST Hit") 
   try {
     const updates = await request.json();
     mockProfileData = { ...mockProfileData, ...updates };

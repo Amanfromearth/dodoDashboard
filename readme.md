@@ -2,29 +2,29 @@
 
 ## Overview
 
-This project is a frontend implementation of the Dodo Payments Merchant Dashboard, created as part of the hiring process for a Senior Frontend Engineer position. The dashboard has responsive charts,form submission to update user, form validation, transaction table with filtering, sorting, search functionality built.
+This project is a frontend implementation of the Dodo Payments Merchant Dashboard, created as part of the hiring process for a Senior Frontend Engineer position. The dashboard includes responsive charts, form submission to update users, form validation, and a transaction table with filtering, sorting, and search functionality.
 
 ## Live Demo
 
-[live demo link here](https://dodo-dash.vercel.app/)
+[Live demo link here](https://dodo-dash.vercel.app/)
 
 ## Features
 
 - Dashboard overview with key metrics display
 - Recent transactions table with pagination
 - Compliance alerts and notifications section
-- toast for notification
+- Toast notifications
 - Responsive design for desktop and mobile devices
-- Transaction filtering, sorting and searching
+- Transaction filtering, sorting, and searching
 - User settings form with validation
-- form submission for user updation
-- form validation using zod
+- Form submission for user updates
+- Form validation using Zod
 
 ## Technologies Used
 
 - React.js, Next.js, JavaScript
-- zustand for state management
-- Tailwind Css and Shadcn UI
+- Zustand for state management
+- Tailwind CSS and Shadcn UI
 
 ## Getting Started
 
@@ -36,14 +36,26 @@ This project is a frontend implementation of the Dodo Payments Merchant Dashboar
 ### Installation
 
 1. Clone the repository:
-[git clone link](https://github.com/Amanfromearth/dodoDashboard.git)
+   [git clone link](https://github.com/Amanfromearth/dodoDashboard.git)
 
 2. Navigate to the project directory:
-    cd dodoDashboard
+
+   ```bash
+   cd dodoDashboard
+   ```
+
 3. Install dependencies:
-npm install
+
+   ```bash
+   npm install
+   ```
+
 4. Start the development server:
-npm run dev
+
+   ```bash
+   npm run dev
+   ```
+
 5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
 ## Design Decisions and Trade-offs
@@ -60,6 +72,6 @@ npm run dev
 
 ## Contact
 
-[Anurag] - [anurag3b@gmail.com]
+Anurag - [anurag3b@gmail.com](mailto:anurag3b@gmail.com)
 
-Project Link: [link](https://github.com/Amanfromearth/dodoDashboard)
+Project Link: [GitHub Repository](https://github.com/Amanfromearth/dodoDashboard)

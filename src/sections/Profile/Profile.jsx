@@ -13,9 +13,10 @@ const Profile = () => {
   });
 
   const onSubmit = useCallback(async (data) => {
+
     try {
       const response = await fetch('/api/profile', {
-        method: 'PUT',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
@@ -30,6 +31,7 @@ const Profile = () => {
       toast.error(`Error updating profile: ${error.message}`);
     }
   }, [setName]);
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full h-full flex p-2 sm:p-6">
