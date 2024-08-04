@@ -1,7 +1,3 @@
-Here's a revised version of your text with improved grammar and clarity:
-
----
-
 # Dodo Payments Merchant Dashboard
 
 ## Overview
