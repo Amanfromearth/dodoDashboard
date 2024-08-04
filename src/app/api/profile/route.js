@@ -17,7 +17,11 @@ export async function GET() {
 }
 
 export async function PUT(request) {
-  const updates = await request.json();
-  mockProfileData = { ...mockProfileData, ...updates };
-  return NextResponse.json({ message: 'Profile updated successfully', data: mockProfileData });
+  try {
+    const updates = await request.json();
+    mockProfileData = { ...mockProfileData, ...updates };
+    return NextResponse.json({ message: 'Profile updated successfully', data: mockProfileData });
+  } catch (error) {
+    return NextResponse.json({ message: 'Error updating profile', error: error.message }, { status: 500 });
+  }
 }
