@@ -27,8 +27,11 @@ const PageItem = ({
           : "text-slate-700 dark:text-slate-300"
       }`}
       onClick={() => {
-        onToggle();
-        onSelect(title);
+        if (subpages) {
+          onToggle();
+        } else {
+          onSelect(title);
+        }
       }}
     >
       <div
@@ -70,7 +73,7 @@ const PageList = () => {
   const { selectedPage, selectedMainPage, openPages, setSelectedPage, togglePage } = usePageStore();
 
   const pages = [
-    { icon: WalletCards, title: "Overview", subpages: ["Dashboard","Transactions"] },
+    { icon: WalletCards, title: "Overview", subpages: ["Dashboard"] },
     { icon: BadgeIndianRupee, title: "Transactions" },
     { icon: Settings, title: "Settings", subpages: ["Profile"] },
   ];

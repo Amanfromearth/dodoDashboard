@@ -1,5 +1,6 @@
-import React from 'react';
-import { BugIcon, PartyPopper, User, UserCheck2Icon } from "lucide-react";
+"use client";
+import React, { useState, useEffect } from 'react';
+import { BugIcon, Moon, PartyPopper, User, UserCheck2Icon } from "lucide-react";
 
 const NotificationIcon = ({ icon: Icon }) => (
   <div className="p-2 rounded-2xl bg-slate-200 dark:bg-[#e3f5ff] dark:text-black">
@@ -18,12 +19,12 @@ const NotificationItem = ({ avatar, text, time }) => (
 );
 
 const NotificationFeed = () => {
-  const notifications = [
+  const [notifications, setNotifications] = useState([
     {
       id: 1,
       avatar: BugIcon,
-      text: "You have an issue that nee...",
-      time: "Just now",
+      text: "You have an issue th...",
+      time: "20 minutes ago",
     },
     {
       id: 2,
@@ -40,10 +41,25 @@ const NotificationFeed = () => {
     {
       id: 4,
       avatar: UserCheck2Icon,
-      text: "New product feature availa...",
+      text: "New product feature available",
       time: "Today, 11:59 AM",
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setNotifications((prevNotifications) => [
+        {
+          id: 5,
+          avatar: Moon,
+          text: "Dark Mode Now Available",
+          time: "Now",
+        },
+        ...prevNotifications,
+      ]);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className="flex flex-col">

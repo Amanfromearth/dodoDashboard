@@ -18,8 +18,8 @@ const Favorites = () => {
   const { selectedPage, setSelectedPage } = usePageStore();
 
   const favorites = [
-    { name: "Dashboard", mainPage: null },
     { name: "Transactions", mainPage: null },
+    { name: "Profile", mainPage: null },
   ];
 
   return (

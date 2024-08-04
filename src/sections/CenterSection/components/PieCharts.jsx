@@ -41,7 +41,7 @@ const CustomLegend = ({ data, colors }) => (
     {data.map((entry, index) => (
       <div
         key={`item-${index}`}
-        className="flex max-w-[200px] justify-between items-center"
+        className="flex w-full justify-between items-center"
       >
         <div className="flex items-center">
           <div
@@ -69,10 +69,10 @@ export default function PieChartComp() {
     <div className="w-full p-4 dark:bg-[#353535] rounded-xl">
       <span className="text-base font-semibold">Pie Chart</span>
       <div className="flex-1">
-        <div className="flex flex-col sm:flex-row justify-between items-center h-[25vh]">
+        <div className="flex flex-row justify-between items-center h-[25vh]">
           <ChartContainer
             config={chartConfig}
-            className="w-full sm:w-1/2 h-full"
+            className="w-full h-full"
           >
             <PieChart>
               <ChartTooltip
@@ -89,7 +89,7 @@ export default function PieChartComp() {
               />
             </PieChart>
           </ChartContainer>
-          <div className="w-full sm:w-1/2 sm:pl-4 pt-8 h-full flex items-center justify-center overflow-y-auto">
+          <div className="w-full sm:pl-4 h-full flex items-center justify-center overflow-y-auto">
             <CustomLegend data={dataWithColors} colors={colors} />
           </div>
         </div>

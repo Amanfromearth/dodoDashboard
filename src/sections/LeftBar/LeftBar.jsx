@@ -4,14 +4,15 @@ import PageList from "./components/PageList";
 
 const LeftBar = ({ isVisible }) => {
   return (
-    <section 
+    <section
       className={`h-full p-3 pr-5 ${
-        isVisible ?  'flex border-none' : 'hidden xl:flex border-r'
+        isVisible ? "flex border-none" : "hidden xl:flex border-r"
       }  border-slate-200 dark:border-[#3f3f3f] flex-col`}
     >
       <NameBadge />
       <Favorites />
       <PageList />
+      <img src="/dodo.svg" alt="dodologo" className="w-32" />
     </section>
   );
 };

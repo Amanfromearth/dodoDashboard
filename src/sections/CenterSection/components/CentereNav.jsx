@@ -13,11 +13,7 @@ import PhoneRightBar from "@/sections/RightBar/PhoneRightBar";
     <div className={`flex items-center ${className}`}>{children}</div>
   );
   
-  const IconButton = ({ Icon }) => (
-    <button className="p-1 hover:bg-gray-100 rounded-full">
-      <Icon className="w-4 h-4" />
-    </button>
-  );
+
   
   const SearchBar = () => (
     <div className="hidden lg:flex items-center bg-gray-100 dark:bg-[#3f3f3f] rounded-md px-3 py-2 w-64">
@@ -39,12 +35,13 @@ const CentereNav = () => {
     <nav className="w-full p-1 px-3 lg:px-8 border-b sticky top-0 bg-background z-20 border-slate-200 dark:border-[#3f3f3f] flex items-center justify-between">
         <NavItem className="text-sm gap-4">
           <PhoneLeftBar/>
-          <IconButton  Icon={Star} />
+          <button className="p-1 hidden lg:block hover:bg-gray-100 rounded-full">
+      <Star className="w-4 h-4" />
+    </button>
           <Breadcrumb/>
         </NavItem>
         <NavItem className="text-sm gap-3">
           <SearchBar />
-          <IconButton Icon={Sidebar} />
           <PhoneRightBar/>
           <ModeToggle/>
         </NavItem>

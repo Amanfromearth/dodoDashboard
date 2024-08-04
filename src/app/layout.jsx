@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import LeftBar from "@/sections/LeftBar/LeftBar";
 import RightBar from "@/sections/RightBar/RightBar";
 import CentereNav from "@/sections/CenterSection/components/CentereNav";
+import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
             </section>
             <RightBar />
           </main>
+          <Toaster className="bg-white" />
         </ThemeProvider>
       </body>
     </html>

@@ -15,7 +15,7 @@ const chartData = [
 
 const Charts = () => {
   return (
-    <div className="w-full px-2 sm:px-7 py-4 flex flex-col gap-4 sm:gap-8">
+    <div className="w-full px-2 sm:px-7 pt-2 flex flex-col gap-4 sm:gap-4">
       <div className="w-full gap-4 sm:gap-5 flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2">
           <LineChartComp chartData={chartData} name="Revenue" />
