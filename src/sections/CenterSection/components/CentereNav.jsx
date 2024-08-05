@@ -1,8 +1,11 @@
-import { ModeToggle } from "@/components/modetoggle";
+"use client";
+import React from "react";
 import { Command, Search, Sidebar, Star } from "lucide-react";
+import { ModeToggle } from "@/components/modetoggle";
 import Breadcrumb from "./BreadCrumb";
 import PhoneLeftBar from "@/sections/LeftBar/PhoneLeftBar";
 import PhoneRightBar from "@/sections/RightBar/PhoneRightBar";
+import usePageStore from "@/lib/useStore";
 
 const NavItem = ({ children, className = "" }) => (
   <div className={`flex items-center ${className}`}>{children}</div>
@@ -24,11 +27,18 @@ const SearchBar = () => (
 );
 
 const CentereNav = () => {
+  const { selectedPage, favorites, toggleFavorite } = usePageStore();
+
   return (
     <nav className="w-full p-1 px-3 lg:px-8 border-b sticky top-0 bg-background z-20 border-slate-200 dark:border-[#3f3f3f] flex items-center justify-between">
       <NavItem className="text-sm gap-4">
         <PhoneLeftBar />
-        <button className="p-1 hidden lg:block hover:bg-gray-100 rounded-full">
+        <button
+          className={`p-1 hover:bg-gray-100 rounded-full ${
+            favorites.includes(selectedPage) ? "text-yellow-500" : ""
+          }`}
+          onClick={() => toggleFavorite(selectedPage)}
+        >
           <Star className="w-4 h-4" />
         </button>
         <Breadcrumb />

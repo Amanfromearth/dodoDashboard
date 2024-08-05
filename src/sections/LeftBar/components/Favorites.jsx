@@ -1,9 +1,9 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import usePageStore from '@/lib/useStore';
 
 const FavoriteLabel = ({ children, onClick, isSelected }) => (
-  <div 
+  <div
     className={`flex items-center w-full gap-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors ${isSelected ? 'bg-gray-200 dark:bg-gray-600' : ''}`}
     onClick={onClick}
   >
@@ -15,26 +15,41 @@ const FavoriteLabel = ({ children, onClick, isSelected }) => (
 );
 
 const Favorites = () => {
-  const { selectedPage, setSelectedPage } = usePageStore();
-
-  const favorites = [
-    { name: "Transactions", mainPage: null },
-    { name: "Profile", mainPage: null },
-  ];
+  const { selectedPage, setSelectedPage, favorites, recentPages } = usePageStore();
+  const [activeTab, setActiveTab] = useState('favorites');
 
   return (
     <div className="flex flex-col py-2 gap-1 items-center">
-      <div className="flex text-sm mb-2 gap-2">
-        <span className="text-slate-500 dark:text-slate-400">Favorites</span>
-        <span className="text-slate-300 dark:text-slate-600">Recently</span>
-      </div>
-      {favorites.map((favorite) => (
-        <FavoriteLabel 
-          key={favorite.name}
-          isSelected={selectedPage === favorite.name}
-          onClick={() => setSelectedPage(favorite.name, favorite.mainPage)}
+      <div className="flex text-sm mb-2 gap-2 w-full">
+        <span 
+          className={`cursor-pointer ${activeTab === 'favorites' ? 'text-slate-500 dark:text-slate-400' : 'text-slate-300 dark:text-slate-600'}`}
+          onClick={() => setActiveTab('favorites')}
         >
-          {favorite.name}
+          Favorites
+        </span>
+        <span 
+          className={`cursor-pointer ${activeTab === 'recent' ? 'text-slate-500 dark:text-slate-400' : 'text-slate-300 dark:text-slate-600'}`}
+          onClick={() => setActiveTab('recent')}
+        >
+          Recently
+        </span>
+      </div>
+      {activeTab === 'favorites' && favorites.map((favorite) => (
+        <FavoriteLabel
+          key={favorite}
+          isSelected={selectedPage === favorite}
+          onClick={() => setSelectedPage(favorite)}
+        >
+          {favorite}
+        </FavoriteLabel>
+      ))}
+      {activeTab === 'recent' && recentPages.map((page) => (
+        <FavoriteLabel
+          key={page}
+          isSelected={selectedPage === page}
+          onClick={() => setSelectedPage(page)}
+        >
+          {page}
         </FavoriteLabel>
       ))}
     </div>

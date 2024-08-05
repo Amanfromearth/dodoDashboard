@@ -1,20 +1,13 @@
 import React from "react";
 import { ChevronDown, MoveUpRight, MoveDownRight } from "lucide-react";
 
-const MetricCard = ({
-  title,
-  value,
-  change,
-  isPositive,
-  bgColor,
-  darkbgColor,
-}) => (
+const MetricCard = ({ title, value, change, isPositive, bgColor, darkbgColor }) => (
   <div
-    className={`${bgColor} dark:${darkbgColor} w-full sm:w-[48%] lg:w-[180px] xl:w-[202px] h-[90px] xl:h-[112px] gap-1 dark:text-black flex flex-col items-center justify-center p-4 sm:p-6 rounded-2xl`}
+    className={`${bgColor} dark:${darkbgColor} w-full sm:w-[calc(50%-0.5rem)] lg:w-[calc(25%-0.75rem)] h-[90px] sm:h-[100px] lg:h-[112px] gap-1 dark:text-black flex flex-col items-center justify-center p-3 sm:p-4 rounded-2xl`}
   >
     <span className="font-medium w-full text-xs sm:text-sm">{title}</span>
     <div className="w-full flex items-center justify-between">
-      <span className="font-semibold text-base sm:text-lg xl:text-2xl">{value}</span>
+      <span className="font-semibold text-base sm:text-lg lg:text-xl xl:text-2xl">{value}</span>
       <div
         className={`flex items-center gap-1 font-light text-[10px] sm:text-xs ${
           isPositive ? "text-green-600" : "text-red-600"
@@ -39,7 +32,7 @@ const Block = () => {
       change: "+11.01%",
       isPositive: true,
       bgColor: "bg-[#f9fef0]",
-      darkbgColor: "dark:bg-[#f9fef0]",
+      darkbgColor: "bg-[#f9fef0]",
     },
     {
       title: "Customers",
@@ -47,7 +40,7 @@ const Block = () => {
       change: "+5.27%",
       isPositive: true,
       bgColor: "bg-[#dbe6f2]",
-      darkbgColor: "dark:bg-[#e5ecf6]",
+      darkbgColor: "bg-[#e5ecf6]",
     },
     {
       title: "Orders",
@@ -55,7 +48,7 @@ const Block = () => {
       change: "-2.35%",
       isPositive: false,
       bgColor: "bg-[#fef0f9]",
-      darkbgColor: "dark:bg-[#f9fef0]",
+      darkbgColor: "bg-[#f9fef0]",
     },
     {
       title: "Conversion",
@@ -63,16 +56,16 @@ const Block = () => {
       change: "+0.82%",
       isPositive: true,
       bgColor: "bg-[#dbe6f2]",
-      darkbgColor: "dark:bg-[#e5ecf6]",
+      darkbgColor: "bg-[#e5ecf6]",
     },
   ];
 
   return (
-    <div className="w-full flex px-2 sm:px-8 p-3 gap-2 flex-col">
+    <div className="w-full flex px-3 sm:px-6 lg:px-8 py-3 gap-2 flex-col">
       <span className="flex text-xs font-medium gap-1 tracking-tight items-center">
         Today <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4" />
       </span>
-      <div className="flex flex-wrap gap-2 sm:gap-4 items-center justify-between w-full">
+      <div className="flex flex-wrap gap-2 sm:gap-4 items-stretch justify-between w-full">
         {metrics.map((metric, index) => (
           <MetricCard key={index} {...metric} />
         ))}
