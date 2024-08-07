@@ -5,7 +5,7 @@ export const transactions = [
       userAvatar: "https://example.com/avatars/arjun.jpg",
       project: "Landing Page",
       amount: 1500.0,
-      date: "Just now",
+      date: "Jul 2, 2024",
       status: "In Progress",
     },
     {
@@ -14,7 +14,7 @@ export const transactions = [
       userAvatar: "https://example.com/avatars/meera.jpg",
       project: "CRM Admin pages",
       amount: 3200.5,
-      date: "A minute ago",
+      date: "Jan 9, 2024",
       status: "Complete",
     },
     {
@@ -23,7 +23,7 @@ export const transactions = [
       userAvatar: "https://example.com/avatars/rohit.jpg",
       project: "Client Project",
       amount: 850.75,
-      date: "1 hour ago",
+      date: "Feb 3, 2024",
       status: "Pending",
     },
     {
@@ -32,7 +32,7 @@ export const transactions = [
       userAvatar: "https://example.com/avatars/priya.jpg",
       project: "Admin Dashboard",
       amount: 2750.0,
-      date: "Yesterday",
+      date: "Aug 6, 2024",
       status: "Approved",
     },
     {
