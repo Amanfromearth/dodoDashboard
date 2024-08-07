@@ -6,25 +6,25 @@ import PieChartComp from "./PieCharts";
 const revenueChartConfig = {
   desktop: {
     label: "Revenue",
-    color: "#ff9a9e", 
+    color: "#ff9a9e",
   },
 };
 
 const transactionsChartConfig = {
   transactions: {
     label: "Number of Transactions",
-    color: "#0b6468", 
+    color: "#0b6468",
   },
 };
 
 const revenueData = [
-  { month: "January", revenue: 1000 },
-  { month: "February", revenue: 1200 },
-  { month: "March", revenue: 1400 },
-  { month: "April", revenue: 1300 },
-  { month: "May", revenue: 1600 },
-  { month: "June", revenue: 1300 },
-  { month: "July", revenue: 2000 },
+  { month: "January", revenue: 100 },
+  { month: "February", revenue: 120 },
+  { month: "March", revenue: 140 },
+  { month: "April", revenue: 130 },
+  { month: "May", revenue: 160 },
+  { month: "June", revenue: 130 },
+  { month: "July", revenue: 200 },
 ];
 
 const transactionsData = [
